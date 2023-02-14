@@ -1,0 +1,247 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <title>Cryptx</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+    <script src="https://kit.fontawesome.com/1ad43aed0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        
+        .mera {
+            background: none;
+            color: #fff;
+        }
+
+
+        body{
+  /* background: #f4f4f4; */
+  height: 100vh;
+}
+
+.wrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+button{
+  font-family: 'Ubuntu', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 170px;
+  height: 40px;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 3px solid #8C82FC;
+  background: #fff;
+  color: #8C82FC;
+  border-radius: 40px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .35s;
+}
+
+button:hover{
+  background: #8C82FC;
+  color: #fff;
+}
+
+button span{
+  opacity: 1;
+  visibility: visible;
+  transition: all .35s;
+}
+
+.success{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .35s;
+}
+
+.success svg{
+  width: 20px;
+  height: 20px;
+  fill: yellowgreen;
+  transform-origin: 50% 50%;
+  transform: translateY(-50%) rotate(0deg) scale(0);
+  transition: all .35s;
+}
+
+button.is_active{
+  width: 40px;
+  height: 40px;
+}
+
+button.is_active .success{
+  opacity: 1;
+  visibility: visible;
+}
+
+button.is_active .success svg{
+  margin-top: 50%;
+  transform: translateY(-50%) rotate(720deg) scale(1);
+}
+
+button.is_active span{
+  opacity: 0;
+  visibility: hidden;
+}
+        
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="">CRYPTX</a>
+
+            <ul class="pure-menu-list">
+                <!-- <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link"></a></li>  -->
+                
+
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="splash-container">
+        <div class="splash">
+
+            <!-- <p> -->
+
+                
+            <!-- <div class="pure-menu pure-menu-horizontal"> -->
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-selected">
+                        <!-- <div style="color:white;">Scrape from</div> <br> -->
+                    </li>
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                        <form class="pure-form pure-form-stacked" action="{% url 'calc' %}" method="post">
+                            {% csrf_token %}
+                            
+                            
+                                <!-- <input name="ptext" type="text" placeholder="Enter PlainText"> -->
+                                <div style="padding-left: px;"><textarea name="ptext" id="ptext" cols="95" rows="5" placeholder="Enter PlainText"></textarea></div>
+                                <br>
+                                <div class="wrapper">
+                                    <button class="" onclick="active()">
+                                        <span>Submit</span>
+                                        <div class="success">
+                                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 29.756 29.756" style="enable-background:new 0 0 29.756 29.756;" xml:space="preserve">
+                                                
+                                            <path d="M29.049,5.009L28.19,4.151c-0.943-0.945-2.488-0.945-3.434,0L10.172,18.737l-5.175-5.173   c-0.943-0.944-2.489-0.944-3.432,0.001l-0.858,0.857c-0.943,0.944-0.943,2.489,0,3.433l7.744,7.752   c0.944,0.943,2.489,0.943,3.433,0L29.049,8.442C29.991,7.498,29.991,5.953,29.049,5.009z"/>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                   <br>
+                                  </div>
+                                <br>
+                                  
+                                  <div class="row">
+                                    <div class="column" style="padding-left: 15px;"><input id="input" name="etext" type="text" value="{{ output1 }}" style="width: 610px" placeholder="Encrypted Text" readonly></div>
+                                    <div class="column" style="padding-left:275px ;"><input type="button" value="copy" id="mybtn" class="btn btn-primary" style="padding: 9px; width: 75px;"></div>
+                                  </div>
+                                <br>
+                                  <div class="row">
+                                    <div class="column"style="padding-left: 15px;"><input id="input2" name="dtext" type="text" value="{{ output2 }}"  style="width: 610px"  placeholder="Decrypted Text" readonly></div>
+                                    <div class="column" style="padding-left:275px ;"><input type="button" value="copy" id="mybtn2" class="btn btn-primary" style="padding: 9px; width: 75px;"></div>
+                                  </div>
+                                <script>
+                                   var text = document.getElementById('input');
+                                   var text2 = document.getElementById('input2');
+                                   var btn = document.getElementById('mybtn');
+                                   var btn2 = document.getElementById('mybtn2');
+                                   btn.onclick = ()=>{
+                                       if(input.value === "")
+                                       {
+                                            alert("no text to copy");
+                                       }
+                                       else{
+                                           text.select();
+                                           text.setSelectionRange(0,99999);
+                                           document.execCommand("copy");
+                                           //to change the text of button
+                                           btn.value = "Copied";
+                                           //Refresh Window after 10 seconds of clicking
+                                           setTimeout(()=>{
+                                               window.location.reload(1)
+                                           },10000);
+                                       }
+                                   }
+
+                                   btn2.onclick = ()=>{
+                                       if(input2.value === "")
+                                       {
+                                            alert("no text to copy");
+                                       }
+                                       else{
+                                           text2.select();
+                                           text2.setSelectionRange(0,99999);
+                                           document.execCommand("copy");
+                                           //to change the text of button
+                                           btn2.value = "Copied";
+                                           //Refresh Window after 10 seconds of clicking
+                                           setTimeout(()=>{
+                                               window.location.reload(1)
+                                           },10000);
+                                       }
+                                   }
+                               </script>
+                                
+                            </form>
+                       
+                    </li>
+                </ul>
+
+        </div>
+    </div>
+           
+
+    <div class="footer l-box is-center">
+        Made with love by <a href="mailto:chinmay.teli@somaiya.edu">Chinmay Teli</a>, <a href="mailto:bhavya.sura@somaiya.edu">Bhavya Sura</a>,  and <a href="mailto:manav.rupani.sura@somaiya.edu">Manav Rupani</a>
+    </div>
+
+    </div>
+
+</body>
+
+</html> 
