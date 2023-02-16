@@ -10,7 +10,7 @@ complexity is required on decryption to identify which of the four possible inpu
 true plaintext. 
 </p>
 
-![Rabin Cryptosystem Image]([/static/css/Rabin%20Cryptosystem.png])
+![Rabin Cryptosystem Image](https://github.com/teichinmay02/is_ia1/blob/main/static/css/Rabin%20Cryptosystem.png)
 
 ## Authors
 - [@Chinmay Teli](https://www.github.com/teichinmay02)
