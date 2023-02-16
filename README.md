@@ -10,8 +10,19 @@ complexity is required on decryption to identify which of the four possible inpu
 true plaintext. 
 </p>
 
-<!-- ![Rabin Cryptosystem Image](https://github.com/teichinmay02/is_ia1/blob/main/static/css/Rabin%20Cryptosystem.png) -->
-<img src="https://github.com/teichinmay02/is_ia1/blob/main/static/css/Rabin%20Cryptosystem.png" alt="Rabin Cryptosystem Image">
+![Rabin Cryptosystem](https://user-images.githubusercontent.com/53343851/219409901-bfe4ee92-1351-4269-a4c9-57c83878d81b.png)
+
+## Run Project
+
+To run the project, run the following command
+
+```bash
+  git clone https://github.com/teichinmay02/is_ia1.git
+```
+
+```bash
+  py manage.py runserver
+ ```
 
 ## Authors
 - [@Chinmay Teli](https://www.github.com/teichinmay02)
